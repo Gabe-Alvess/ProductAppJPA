@@ -5,11 +5,17 @@ import be.intecbrussel.modal.Storage;
 import be.intecbrussel.repository.IStorageRepository;
 import be.intecbrussel.repository.StorageRepository;
 
-import java.util.List;
-
 public class StorageService implements IStorageService {
     private IStorageRepository sr = new StorageRepository();
-    private IProductService ps = new ProductService();
+    private IProductService ps;
+
+    protected StorageService(ProductService ps) {
+        this.ps = ps;
+    }
+
+    public StorageService () {
+        ps = new ProductService(this);
+    }
 
     @Override
     public void addStorage(Storage storage) {
@@ -49,13 +55,3 @@ public class StorageService implements IStorageService {
         }
     }
 }
-
-// Nodig zonder orphanRemoval = true!
-
-//        Storage storage = sr.readStorage(id);
-
-//        for (Product product : storage.getStorageContent()) {
-//            if (product.getId() != 0) {
-//                ps.deleteProduct(product);
-//            }
-//        }

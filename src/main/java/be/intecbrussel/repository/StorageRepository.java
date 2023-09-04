@@ -24,11 +24,11 @@ public class StorageRepository implements IStorageRepository {
     public Storage readStorage(long id) {
         EntityManager em = EMFProvider.getEMF().createEntityManager();
 
-        Storage storage = em.find(Storage.class, id);
+        Storage dbStorage = em.find(Storage.class, id);
 
         em.close();
 
-        return storage;
+        return dbStorage;
     }
 
     @Override

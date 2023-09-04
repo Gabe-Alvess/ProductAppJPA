@@ -54,14 +54,14 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void deleteProduct(long id, Storage storage) {
+    public void deleteProduct(long id) {
         // Delete
         EntityManager em = EMFProvider.getEMF().createEntityManager();
 
         em.getTransaction().begin();
 
         Product dbProduct = em.find(Product.class, id); // Locate dbProduct
-        Storage dbStorage = em.find(Storage.class, storage.getId()); // Locate dbStorage
+        Storage dbStorage = em.find(Storage.class,); // Locate dbStorage
 
         dbStorage.getStorageContent().remove(dbProduct); // Remove relation (remove product from list)
         em.merge(dbStorage); // Sync storages
@@ -72,7 +72,7 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void deleteProduct(Product product, Storage storage) {
+    public void deleteProduct(Product product) {
         // Delete
         EntityManager em = EMFProvider.getEMF().createEntityManager();
 

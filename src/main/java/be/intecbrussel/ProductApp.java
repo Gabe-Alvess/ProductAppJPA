@@ -79,10 +79,10 @@ public class ProductApp {
         ps.updateProduct(p2);
 
         // Delete
-        ps.deleteProduct(4, s1);
-        ps.deleteProduct(d, s2);
+        ps.deleteProduct(4);
+        ps.deleteProduct(d);
 
-        ps.deleteProduct(4, s1);
-        ps.deleteProduct(p4, s1);
+        ps.deleteProduct(4);
+        ps.deleteProduct(p4);
     }
 }

@@ -14,7 +14,7 @@ public class Storage {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = false)
     private List<Product> storageContent;
 
     protected Storage() {
@@ -62,17 +62,5 @@ public class Storage {
                 "name='" + name + '\'' +
                 ", storageContent=" + storageContent +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Storage storage)) return false;
-        return id == storage.id && Objects.equals(name, storage.name) && Objects.equals(storageContent, storage.storageContent);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, storageContent);
     }
 }
