@@ -33,19 +33,17 @@ public class ProductService implements IProductService {
 
     @Override
     public void deleteProduct(long id) {
-        Product dbProduct = pr.readProduct(id);
+        Product dbProduct = getProduct(id);
 
         if (dbProduct != null) {
-            pr.deleteProduct(id);
+            deleteProduct(dbProduct);
         }
     }
 
     @Override
     public void deleteProduct(Product product) {
-        Product dbProduct = pr.readProduct(product.getId());
+        ss.deleteProductFromStorage(product);
 
-        if (dbProduct != null) {
-            pr.deleteProduct(product);
-        }
+        pr.deleteProduct(product);
     }
 }

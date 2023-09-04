@@ -1,11 +1,10 @@
 package be.intecbrussel;
 
+import be.intecbrussel.modal.Key;
+import be.intecbrussel.modal.Person;
 import be.intecbrussel.modal.Product;
 import be.intecbrussel.modal.Storage;
-import be.intecbrussel.service.IProductService;
-import be.intecbrussel.service.IStorageService;
-import be.intecbrussel.service.ProductService;
-import be.intecbrussel.service.StorageService;
+import be.intecbrussel.service.*;
 
 public class ProductApp {
     public static void main(String[] args) {
@@ -66,10 +65,11 @@ public class ProductApp {
 
         // Product Tests
 
-        // Create
         IProductService ps = new ProductService();
+
+        // Create
         ps.addProduct(p2);
-//        ps.addProduct(new Product("Black", 1.0, 0.1));
+        ps.addProduct(new Product("Black", 1.0, 0.1));
 
         // Read
         System.out.println(ps.getProduct(5));
@@ -82,7 +82,56 @@ public class ProductApp {
         ps.deleteProduct(4);
         ps.deleteProduct(d);
 
-        ps.deleteProduct(4);
-        ps.deleteProduct(p4);
+        // Person Tests
+
+        IPersonService personService = new PersonService();
+        Person jean = new Person("Jean");
+        Person bob = new Person("Bob");
+
+        // Create
+
+        personService.addPerson(jean);
+        personService.addPerson(bob);
+
+        // Read
+
+        System.out.println(personService.getPerson(1));
+
+        // Update
+
+        jean.setFavoriteStorage(s1);
+        jean.setName("Jean Jean");
+        personService.updatePerson(jean);
+
+        // Delete
+
+        personService.deletePerson(2);
+
+        // Key Tests
+
+        IKeyService ks = new KeyService();
+        Key key1 = new Key();
+        Key key2 = new Key();
+
+        // Create
+
+        ks.addKey(key1);
+        ks.addKey(key2);
+
+        // Read
+
+        System.out.println(ks.getKey(1));
+
+        // Update
+
+        key1.setStorage(s1);
+        key2.setStorage(s2);
+        ks.updateKey(key1);
+        ks.updateKey(key2);
+
+        // Delete
+
+        ks.deleteKey(2);
+
     }
 }

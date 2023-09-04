@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 
 import java.util.Objects;
 
-@Entity
+@Entity(name = "tb_product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

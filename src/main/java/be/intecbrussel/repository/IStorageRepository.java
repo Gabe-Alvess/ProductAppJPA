@@ -1,5 +1,6 @@
 package be.intecbrussel.repository;
 
+import be.intecbrussel.modal.Product;
 import be.intecbrussel.modal.Storage;
 
 public interface IStorageRepository {
@@ -8,6 +9,8 @@ public interface IStorageRepository {
 
     // READ
     Storage readStorage(long id);
+
+    Storage readStorage(Product product);
 
     // UPDATE
     void updateStorage(Storage storage);

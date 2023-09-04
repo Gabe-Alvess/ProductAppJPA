@@ -2,14 +2,14 @@ package be.intecbrussel.modal;
 
 import jakarta.persistence.*;
 
-@Entity
+@Entity(name = "person_tb")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY);
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
 
-    @ManyToMany
+    @ManyToOne
     private Storage favoriteStorage;
 
     protected Person() {}

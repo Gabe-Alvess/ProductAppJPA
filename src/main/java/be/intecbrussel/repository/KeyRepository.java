@@ -1,17 +1,17 @@
 package be.intecbrussel.repository;
 
 import be.intecbrussel.config.EMFProvider;
-import be.intecbrussel.modal.Person;
+import be.intecbrussel.modal.Key;
 import jakarta.persistence.EntityManager;
 
-public class PersonRepository implements IPersonRepository {
+public class KeyRepository implements IKeyRepository {
     @Override
-    public void createPerson(Person person) {
+    public void createKey(Key key) {
         EntityManager em = EMFProvider.getEMF().createEntityManager();
 
         em.getTransaction().begin();
 
-        em.persist(person);
+        em.persist(key);
 
         em.getTransaction().commit();
 
@@ -19,25 +19,25 @@ public class PersonRepository implements IPersonRepository {
     }
 
     @Override
-    public Person readPerson(long id) {
+    public Key readKey(long id) {
         EntityManager em = EMFProvider.getEMF().createEntityManager();
 
-        Person dbPerson = em.find(Person.class, id);
+        Key dbKey = em.find(Key.class, id);
 
         em.close();
 
-        return dbPerson;
+        return dbKey;
     }
 
     @Override
-    public void updatePerson(Person person) {
+    public void updateKey(Key key) {
         EntityManager em = EMFProvider.getEMF().createEntityManager();
 
         em.getTransaction().begin();
 
-        Person mergedPerson = em.merge(person);
+        Key mergedKey = em.merge(key);
 
-        if (mergedPerson.getId() != person.getId()) {
+        if (mergedKey.getId() != key.getId()) {
             em.getTransaction().rollback();
         } else {
             em.getTransaction().commit();
@@ -47,12 +47,12 @@ public class PersonRepository implements IPersonRepository {
     }
 
     @Override
-    public void deletePerson(long id) {
+    public void deleteKey(long id) {
         EntityManager em = EMFProvider.getEMF().createEntityManager();
 
         em.getTransaction().begin();
 
-        em.remove(em.find(Person.class, id));
+        em.remove(em.find(Key.class, id));
 
         em.getTransaction().commit();
 

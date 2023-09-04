@@ -54,4 +54,15 @@ public class StorageService implements IStorageService {
             sr.deleteStorage(id);
         }
     }
+
+    @Override
+    public void deleteProductFromStorage(Product product) {
+        Storage dbStorage = sr.readStorage(product);
+
+        dbStorage.getStorageContent().remove(product);
+
+        updateStorage(dbStorage);
+    }
+
+
 }

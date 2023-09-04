@@ -19,6 +19,7 @@ public class ProductRepository implements IProductRepository {
         }
 
         em.getTransaction().commit();
+
         em.close();
     }
 
@@ -54,38 +55,16 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void deleteProduct(long id) {
-        // Delete
-        EntityManager em = EMFProvider.getEMF().createEntityManager();
-
-        em.getTransaction().begin();
-
-        Product dbProduct = em.find(Product.class, id); // Locate dbProduct
-        Storage dbStorage = em.find(Storage.class,); // Locate dbStorage
-
-        dbStorage.getStorageContent().remove(dbProduct); // Remove relation (remove product from list)
-        em.merge(dbStorage); // Sync storages
-        em.remove(dbProduct); // Remove product from product table in the db.
-
-        em.getTransaction().commit();
-        em.close();
-    }
-
-    @Override
     public void deleteProduct(Product product) {
         // Delete
         EntityManager em = EMFProvider.getEMF().createEntityManager();
 
         em.getTransaction().begin();
 
-        Product dbProduct = em.find(Product.class, product.getId());
-        Storage dbStorage = em.find(Storage.class, storage.getId());
-
-        dbStorage.getStorageContent().remove(dbProduct);
-        em.merge(dbStorage);
-        em.remove(dbProduct);
+        em.remove(em.find(Product.class, product.getId()));
 
         em.getTransaction().commit();
+
         em.close();
     }
 }
