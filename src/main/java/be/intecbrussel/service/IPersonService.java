@@ -2,12 +2,6 @@ package be.intecbrussel.service;
 
 import be.intecbrussel.modal.Person;
 
-public interface IPersonService {
-    void addPerson(Person person);
+public interface IPersonService extends IEntityService<Person, Long> {
 
-    Person getPerson(long id);
-
-    void updatePerson(Person person);
-
-    void deletePerson(long id);
 }

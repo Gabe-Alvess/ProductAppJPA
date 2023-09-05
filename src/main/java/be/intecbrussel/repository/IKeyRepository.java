@@ -2,12 +2,6 @@ package be.intecbrussel.repository;
 
 import be.intecbrussel.modal.Key;
 
-public interface IKeyRepository {
-    void createKey(Key key);
+public interface IKeyRepository extends IEntityRepository<Key> {
 
-    Key readKey(long id);
-
-    void updateKey(Key key);
-
-    void deleteKey(long id);
 }

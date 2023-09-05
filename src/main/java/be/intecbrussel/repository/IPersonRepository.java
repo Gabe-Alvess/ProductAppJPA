@@ -2,12 +2,6 @@ package be.intecbrussel.repository;
 
 import be.intecbrussel.modal.Person;
 
-public interface IPersonRepository {
-    void createPerson(Person person);
+public interface IPersonRepository extends IEntityRepository<Person> {
 
-    Person readPerson(long id);
-
-    void updatePerson(Person person);
-
-    void deletePerson(long id);
 }

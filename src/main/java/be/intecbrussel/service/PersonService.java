@@ -17,30 +17,33 @@ public class PersonService implements IPersonService {
         this.ss = new StorageService();
     }
 
-
     @Override
-    public void addPerson(Person person) {
+    public void add(Person person) {
         Storage favStorage = person.getFavoriteStorage();
 
         if (favStorage != null && favStorage.getId() == 0) {
-            ss.addStorage(favStorage);
+            ss.add(favStorage);
         }
 
-        personRepo.createPerson(person);
+        personRepo.create(person);
     }
 
     @Override
-    public Person getPerson(long id) {
-        return personRepo.readPerson(id);
+    public Person get(Long id) {
+        return personRepo.read(Person.class, id);
     }
 
     @Override
-    public void updatePerson(Person person) {
-        personRepo.updatePerson(person);
+    public void update(Person person) {
+        personRepo.update(person);
     }
 
     @Override
-    public void deletePerson(long id) {
-        personRepo.deletePerson(id);
+    public void delete(Long id) {
+        Person person = get(id);
+        person.setFavoriteStorage(null);
+        update(person);
+
+        personRepo.delete(Person.class, id);
     }
 }

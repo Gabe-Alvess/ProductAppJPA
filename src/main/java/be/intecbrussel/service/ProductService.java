@@ -17,23 +17,27 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void addProduct(Product product) {
-        pr.createProduct(product);
+    public void add(Product product) {
+        pr.create(product);
     }
 
     @Override
-    public Product getProduct(long id) {
-        return pr.readProduct(id);
+    public Product get(Long id) {
+        return pr.read(Product.class, id);
     }
 
     @Override
-    public void updateProduct(Product product) {
-        pr.updateProduct(product);
+    public void update(Product product) {
+        Product dbProduct = get(product.getId());
+
+        if (dbProduct != null && dbProduct.getId() == product.getId()) {
+            pr.update(product);
+        }
     }
 
     @Override
-    public void deleteProduct(long id) {
-        Product dbProduct = getProduct(id);
+    public void delete(Long id) {
+        Product dbProduct = get(id);
 
         if (dbProduct != null) {
             deleteProduct(dbProduct);
@@ -43,7 +47,6 @@ public class ProductService implements IProductService {
     @Override
     public void deleteProduct(Product product) {
         ss.deleteProductFromStorage(product);
-
-        pr.deleteProduct(product);
+        pr.delete(Product.class, product.getId());
     }
 }

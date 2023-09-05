@@ -13,55 +13,59 @@ public class StorageService implements IStorageService {
         this.ps = ps;
     }
 
-    public StorageService () {
+    public StorageService() {
         ps = new ProductService(this);
     }
 
     @Override
-    public void addStorage(Storage storage) {
+    public void add(Storage storage) {
         for (Product product : storage.getStorageContent()) {
             if (product.getId() == 0) {
-                ps.addProduct(product);
+                ps.add(product);
             } else {
-                ps.updateProduct(product);
+                ps.update(product);
             }
         }
-        sr.createStorage(storage);
+        sr.create(storage);
     }
 
     @Override
-    public Storage getStorage(long id) {
-        return sr.readStorage(id);
+    public Storage get(Long id) {
+        return sr.read(Storage.class, id);
     }
 
     @Override
-    public void updateStorage(Storage storage) {
+    public void update(Storage storage) {
         for (Product product : storage.getStorageContent()) {
             if (product.getId() == 0) {
-                ps.addProduct(product);
+                ps.add(product);
             } else {
-                ps.updateProduct(product);
+                ps.update(product);
             }
         }
-        sr.updateStorage(storage);
+
+        sr.update(storage);
     }
 
     @Override
-    public void deleteStorage(long id) {
-        Storage dbStorage = sr.readStorage(id);
+    public void delete(Long id) {
+        Storage dbStorage = sr.read(Storage.class, id);
 
         if (dbStorage != null) {
-            sr.deleteStorage(id);
+            sr.delete(Storage.class, id);
         }
+
     }
 
     @Override
     public void deleteProductFromStorage(Product product) {
         Storage dbStorage = sr.readStorage(product);
 
-        dbStorage.getStorageContent().remove(product);
+        if (dbStorage != null) {
+            dbStorage.getStorageContent().remove(product);
+            update(dbStorage);
+        }
 
-        updateStorage(dbStorage);
     }
 
 

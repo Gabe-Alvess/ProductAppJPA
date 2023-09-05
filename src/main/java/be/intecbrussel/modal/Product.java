@@ -67,16 +67,4 @@ public class Product {
                 ", weight=" + weight +
                 '}';
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Product product)) return false;
-        return id == product.id && Double.compare(value, product.value) == 0 && Double.compare(weight, product.weight) == 0 && Objects.equals(name, product.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, value, weight);
-    }
 }

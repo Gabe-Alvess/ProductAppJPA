@@ -1,6 +1,7 @@
 package be.intecbrussel.service;
 
 import be.intecbrussel.modal.Key;
+import be.intecbrussel.modal.Storage;
 import be.intecbrussel.repository.IKeyRepository;
 import be.intecbrussel.repository.KeyRepository;
 
@@ -17,26 +18,32 @@ public class KeyService implements IKeyService {
     }
 
     @Override
-    public void addKey(Key key) {
-        if (key.getStorage() != null && key.getStorage().getId() == 0) {
-            ss.addStorage(key.getStorage());
+    public void add(Key key) {
+        Storage storage = key.getStorage();
+
+        if (storage != null && storage.getId() == 0) {
+            ss.add(storage);
         }
 
-        kr.createKey(key);
+        kr.create(key);
     }
 
     @Override
-    public Key getKey(long id) {
-        return kr.readKey(id);
+    public Key get(Long id) {
+        return kr.read(Key.class, id);
     }
 
     @Override
-    public void updateKey(Key key) {
-        kr.updateKey(key);
+    public void update(Key key) {
+        kr.update(key);
     }
 
     @Override
-    public void deleteKey(long id) {
-        kr.deleteKey(id);
+    public void delete(Long id) {
+        Key key = get(id);
+        key.setStorage(null);
+        update(key);
+
+        kr.delete(Key.class, id);
     }
 }
