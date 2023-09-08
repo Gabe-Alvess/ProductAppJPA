@@ -1,13 +1,8 @@
-package be.intecbrussel.modal;
+package be.intecbrussel.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-import java.util.Objects;
-
-@Entity(name = "tb_product")
+@Entity(name = "product_tb")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +10,8 @@ public class Product {
     private String name;
     private double value;
     private double weight;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Storage storage;
 
     protected Product() {
 
@@ -56,6 +53,19 @@ public class Product {
 
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public void setStorage(Storage storage) {
+        this.storage = storage;
+
+        if (!storage.getStorageContent().contains(this)) {
+            storage.add(this);
+        }
+
     }
 
     @Override

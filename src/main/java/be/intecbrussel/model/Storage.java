@@ -1,12 +1,11 @@
-package be.intecbrussel.modal;
+package be.intecbrussel.model;
 
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-@Entity(name = "tb_storage")
+@Entity(name = "storage_tb")
 public class Storage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +13,7 @@ public class Storage {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = false)
+    @OneToMany(mappedBy = "storage", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private List<Product> storageContent;
 
     protected Storage() {
@@ -28,12 +27,23 @@ public class Storage {
 
     public void add(Product product) {
         storageContent.add(product);
+        if (product.getStorage() != this) {
+            product.setStorage(this);
+        }
     }
 
     public void add(Product... products) {
         for (Product product : products) {
             add(product);
         }
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -44,16 +54,8 @@ public class Storage {
         this.name = name;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public List<Product> getStorageContent() {
         return storageContent;
-    }
-
-    public void setStorageContent(List<Product> storageContent) {
-        this.storageContent = storageContent;
     }
 
     @Override

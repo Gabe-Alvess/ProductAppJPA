@@ -1,4 +1,4 @@
-package be.intecbrussel.modal;
+package be.intecbrussel.model;
 
 import jakarta.persistence.*;
 
@@ -7,7 +7,7 @@ public class Key {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private Storage storage;
 
     public long getId() {

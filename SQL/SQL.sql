@@ -14,23 +14,30 @@ drop table user_tb;
 
 use productapp_db;
 
-select * from tb_product;
-select * from tb_storage;
-select * from tb_storage_tb_product;
+select * from product_tb;
+select * from storage_tb;
 
 select * from person_tb;
 select * from key_tb;
 
-describe tb_product;
-describe tb_storage;
-describe tb_storage_tb_product;
+select * from job_tb;
+select * from job_tb_person_tb;
+
+describe product_tb;
+describe storage_tb;
 
 describe person_tb;
 describe key_tb;
 
-drop table tb_product;
-drop table tb_storage;
-drop table tb_storage_tb_product;
+describe job_tb;
+describe job_tb_person_tb;
 
-drop table person_tb;
+drop table product_tb;
+drop table storage_tb;
+
 drop table key_tb;
+drop table person_tb;
+
+
+drop table job_tb;
+drop table job_tb_person_tb;
