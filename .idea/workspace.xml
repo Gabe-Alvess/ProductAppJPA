@@ -5,35 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41343f89-eeea-4418-8007-2b6cddd290e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/Job.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/entities/IJobRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/implementations/JobRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/entities/IJobService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/JobService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/PersonalJob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SQL/SQL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/SQL.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/ProductApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/ProductApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/modal/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/modal/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/modal/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/modal/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/IKeyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/entities/IKeyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/IPersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/entities/IPersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/entities/IProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/IStorageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/entities/IStorageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/KeyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/implementations/KeyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/implementations/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/implementations/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/StorageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/implementations/StorageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/IKeyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/entities/IKeyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/IPersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/entities/IPersonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/entities/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/IStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/entities/IStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/KeyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/KeyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/PersonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/StorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/StorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/implementations/JobRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/repository/implementations/JobRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/JobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/JobService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/intecbrussel/service/implementations/PersonService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

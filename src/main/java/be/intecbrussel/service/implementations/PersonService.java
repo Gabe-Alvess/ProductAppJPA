@@ -12,8 +12,8 @@ import java.util.List;
 
 public class PersonService implements IPersonService {
     private IPersonRepository personR = new PersonRepository();
-    protected IJobService jobS = Service.getJobService();
     protected IStorageService storageS = Service.getStorageService();
+    protected IJobService jobS = Service.getJobService();
 
     @Override
     public void add(Person person) {

@@ -170,11 +170,16 @@ public class ProductApp {
 
         IJobService jobS = Service.getJobService();
         Job job1 = new Job("Java Developer", "Develop in java");
-        job1.getEmployees().add(jean);
+        PersonalJob pJob1 = new PersonalJob(job1,jean,5000);
+        job1.getEmployees().add(pJob1);
+
         Job job2 = new Job("Java Developer", "Develop in java");
-        job2.getEmployees().add(bob);
+        PersonalJob pJob2 = new PersonalJob(job2,bob,3000);
+        job2.getEmployees().add(pJob2);
+
         Job job3 = new Job("C# Developer", "Develop in C#");
-        job3.getEmployees().add(tom);
+        PersonalJob pJob3 = new PersonalJob(job3,tom,1000);
+        job3.getEmployees().add(pJob3);
 
         // Create
 

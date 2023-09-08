@@ -15,7 +15,7 @@ public class Job {
     private String jobDescription;
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    private List<Person> employees = new ArrayList<>();
+    private List<PersonalJob> employees = new ArrayList<>();
 
     protected Job(){}
 
@@ -28,10 +28,6 @@ public class Job {
         return id;
     }
 
-    public String getJobDescription() {
-        return jobDescription;
-    }
-
     public String getJobTitle() {
         return jobTitle;
     }
@@ -40,11 +36,15 @@ public class Job {
         this.jobTitle = jobTitle;
     }
 
+    public String getJobDescription() {
+        return jobDescription;
+    }
+
     public void setJobDescription(String jobDescription) {
         this.jobDescription = jobDescription;
     }
 
-    public List<Person> getEmployees() {
+    public List<PersonalJob> getEmployees() {
         return employees;
     }
 

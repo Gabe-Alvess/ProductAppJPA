@@ -21,7 +21,7 @@ select * from person_tb;
 select * from key_tb;
 
 select * from job_tb;
-select * from job_tb_person_tb;
+select * from job_tb_personaljob;
 
 describe product_tb;
 describe storage_tb;
@@ -38,6 +38,6 @@ drop table storage_tb;
 drop table key_tb;
 drop table person_tb;
 
-
 drop table job_tb;
-drop table job_tb_person_tb;
+drop table personaljob;
+drop table job_tb_personaljob;
