@@ -16,7 +16,7 @@ public class ProductApp {
         Product p3 = new Product("Banana", 3.60, 4.50);
         Product p4 = new Product("Train", 50, 60);
 
-        Product a = new Product("a", 1.0, 0.1);
+        Product a = new Product("Hello", 1.0, 0.1);
         Product b = new Product("b", 1.0, 0.1);
         Product c = new Product("c", 1.0, 0.1);
         Product d = new Product("d", 1.0, 0.1);
@@ -200,6 +200,5 @@ public class ProductApp {
         // Delete
 
         jobS.delete(3L);
-
     }
 }
